@@ -1,4 +1,6 @@
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -20,6 +22,8 @@ public class Lc020 {
             String s1 = s.nextLine();
 
             System.out.println(isValid(s1));
+
+//            System.out.println( isValidByList("s1"));
 
 
         }
@@ -43,5 +47,54 @@ public class Lc020 {
         }
         return s.length() == 0;
     }
+
+    /**
+     * 方法二: 利用堆栈思想，采用list的方式进行处理
+     * 题目目的是为了匹配完整括号，
+     * 正向括号时直接放入LinkedList中，
+     * 出现反向括号时进行处理，去匹配list中最后一个字符是否相匹配，匹配的话进行删除，否则直接返回false
+     * 当传入的字符已经处理完毕，如果list为空，则表示全部匹配，否则表示有多余字符，返回false,简化为
+     * list.size() == 0
+     *
+     * @param s
+     * @return
+     */
+    public static boolean isValidByList(String s) {
+
+        List<Character> list = new LinkedList<>();
+
+        char[] chars = s.toCharArray();
+
+        for (int i = 0; i < chars.length; i++) {
+
+            if (chars[i] == ')' || chars[i] == ']' || chars[i] == '}') {
+                if (list.isEmpty() || !isMath(chars[i], list)) {
+                    return false;
+                } else {
+                    list.remove(list.size() - 1);
+                }
+
+            } else {
+                list.add(chars[i]);
+            }
+        }
+        return list.size() == 0;
+    }
+
+    private static boolean isMath(char aChar, List<Character> list) {
+        switch (aChar) {
+            case ')':
+                return (list.get(list.size() - 1) == '(') ? true : false;
+            case ']':
+                return (list.get(list.size() - 1) == '[') ? true : false;
+            case '}':
+                return (list.get(list.size() - 1) == '{') ? true : false;
+            default:
+                return false;
+
+        }
+
+    }
+
 
 }
