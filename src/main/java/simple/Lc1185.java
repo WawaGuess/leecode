@@ -1,3 +1,4 @@
+package simple;
 /**
  * @author GuessHat
  * @project leecode
@@ -51,10 +52,7 @@ public class Lc1185 {
 
     private static Boolean checkParams(int day, int month, int year) {
 
-        if (0 < day && day < 32 && 0 < month && month < 13 && 1970 < year && year < 2101) {
-            return true;
-        }
-        return false;
+        return (0 < day && day < 32 && 0 < month && month < 13 && 1970 < year && year < 2101);
 
     }
 }
