@@ -14,6 +14,22 @@
  * 【构造方法/toString/override提示】control + enter
  
 
+## 格式化代码
+ * 【格式化代码】command + option + L
+
+
+## 复制和删除
+
+ * 【复制一行】command + D
+
+ * 【删除一行】command + 删除键
+
+
+## 查找方法使用
+
+ * 【查找此方法的Usages】command + B
+ * 【替换文本】command + R
+
 # Windows版idea快捷键
 
 ## 操作定位
@@ -26,6 +42,9 @@
  * 【在下一行插入一个空行】
 
  * 【构造方法/toString/override提示】
+ 
+## 运行代码
+ * 【运行代码】ctrl+shift+R
  
 # 公共代码生成
 
