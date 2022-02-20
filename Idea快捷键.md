@@ -29,6 +29,7 @@
 
  * 【查找此方法的Usages】command + B
  * 【替换文本】command + R
+ * 【查找类】command + shift + O
 
 # Windows版idea快捷键
 
