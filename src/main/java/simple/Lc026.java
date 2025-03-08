@@ -51,4 +51,17 @@ public class Lc026 {
         }
         return i + 1;
     }
+
+    public static int removeDuplicates_1(int[] nums) {
+        int position = 1;
+
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[position - 1]) {
+                nums[position] = nums[i];
+                position++;
+            }
+        }
+
+        return position;
+    }
 }
